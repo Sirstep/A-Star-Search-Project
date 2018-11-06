@@ -2,7 +2,7 @@
 Simple yet scalable application that demonstrates the A* Search algorithm.
 
 Future updates:
-  Allow larger maps (2x2 - 50x50)\n
+  Allow larger maps (2x2 - 50x50)
     Take out
   Add scroller to open and closed list
   Fix agent location after closing final path window
