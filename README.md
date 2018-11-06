@@ -14,5 +14,5 @@ Future updates:
     -> Redden path tiles
     -> Darken tiles not in path
     -> Make into a transition? (fade)
-  6. Fix aglorithm to select lowest h value
+  6. Fix aglorithm to select lowest h value (LAST EDIT)
   7. Add "percent of tiles blocked" tool
