@@ -1,0 +1,116 @@
+<MainWindow>:
+    canvas.before:
+        BorderImage:
+            texture: app.dark.texture
+            pos: self.pos
+            size: self.size
+
+
+<FloatSection>:
+    canvas.before:
+        BorderImage:
+            texture: app.darkest.texture
+            pos: self.pos
+            size: self.size
+
+
+<Section>:
+    padding: 10
+    canvas.before:
+        BorderImage:
+            texture: app.darkest.texture
+            pos: self.pos
+            size: self.size
+
+
+<Subsection>:
+    canvas.before:
+        BorderImage:
+            texture: app.light.texture
+            pos: self.pos
+            size: self.size
+
+
+<Tile>:
+    padding: (self.width * .05, self.height * .05)
+    text_size: self.size
+    halign: 'left'
+    valign: 'top'
+    canvas.before:
+        BorderImage:
+            # make texture blue
+            texture: app.black.texture
+            pos: self.pos
+            size: self.size
+
+
+<Block>:
+    background_color: (0, 0, 0, 1)
+    canvas.before:
+        BorderImage:
+            # make texture blue
+            texture: app.black.texture
+            pos: self.pos
+            size: self.size
+
+
+<Agent>:
+    size_hint: (None, None)
+    size: (20, 20)
+    canvas.before:
+        BorderImage:
+            texture: app.agent.texture
+            pos: self.pos
+            size: self.size
+
+
+<OpenLabel>:
+    size_hint: (.125, .1)
+    canvas.before:
+        BorderImage:
+            texture: app.open.texture
+            pos: self.pos
+            size: self.size
+
+
+<ClosedLabel>:
+    size_hint: (.125, .1)
+    canvas.before:
+        BorderImage:
+            texture: app.closed.texture
+            pos: self.pos
+            size: self.size
+
+
+<ScaleLabel@Label>:
+    font_size: self.height * 0.5
+	_scale: 1. if self.texture_size[0] < self.width else float(self.width) / self.texture_size[0]
+	canvas.before:
+	    BorderImage:
+            texture: app.dark.texture
+            pos: self.pos
+            size: self.size
+		PushMatrix
+		Scale:
+			origin: self.center
+			x: self._scale or 1.
+			y: self._scale or 1.
+	canvas.after:
+		PopMatrix
+
+
+<BlackScaleLabel@ScaleLabel>:
+    font_size: self.height * 0.5
+    _scale: 1. if self.texture_size[0] < self.width else float(self.width) / self.texture_size[0]
+    canvas.before:
+        BorderImage:
+            texture: app.black.texture
+            pos: self.pos
+            size: self.size
+        PushMatrix
+        Scale:
+            origin: self.center
+            x: self._scale or 1.
+            y: self._scale or 1.
+    canvas.after:
+        PopMatrix
